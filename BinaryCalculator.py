@@ -10,27 +10,32 @@ from tkinter import ttk
 
 # Creates the root window and sets the title and dimensions
 root = tk.Tk()
-root.title('helloworld')
+root.title('input textbox')
 root.geometry('400x200')
-
-# Sets the frame of the window and makes the child functions
-frame = ttk.Frame(root, padding=10)
-frame.grid()
 
 # Input box function
 def print_input():
     inp = inputtxt.get("1.0", "end-1c")
-    lbl.config(text="Provided Input: " + inp)
+    lbl.config(text = inp)
 
-inputtxt = tk.Text(root, height=5, width=20)
+inputtxt = tk.Text(root,
+                   height = 5,
+                   width = 20)
+
+
 inputtxt.pack()
 
 # New button creation
-print_button = tk.Button(root, text="print", command=print_input)
+print_button = tk.Button(root,
+                         text = "Print",
+                         command = print_input)
+
+
 print_button.pack()
 
+
 # Label creation
-lbl = tk.Label(root, text="")
+lbl = tk.Label(root, text = "")
 lbl.pack()
 
 root.mainloop()
